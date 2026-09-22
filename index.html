@@ -227,6 +227,372 @@
     .spinner.spin .ring{animation:none}.reveal{transition:none}
   }
 </style>
+
+<style id="alegra-redesign">
+/* ── ALEGRA LIGHT MODE OVERRIDE ─────────────────────────── */
+:root {
+  --teal:   #1A7E7F;
+  --teal-2: #00535E;
+  --navy:   #001E3B;
+  --navy-2: #F5F5F7;
+  --navy-3: #E5E5EA;
+  --gold:   #F59E0B;
+  --coral:  #1A7E7F;
+  --alert:  #EF4444;
+  --white:  #FFFFFF;
+  --soft:   #6E6E73;
+  --line:   #E5E5EA;
+  --radius: 16px;
+  --shadow: 0 4px 20px rgba(0,62,62,.10);
+}
+
+/* Stars / ambient effects → ocultar en tema claro */
+#stars,#shooting { display:none !important; }
+
+body {
+  background: #F8F9FA !important;
+  color: #1D1D1F !important;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  background: #FFFFFF !important;
+  border-radius: 14px !important;
+  padding: 12px 20px !important;
+  border: 1px solid #E5E5EA !important;
+  box-shadow: 0 2px 8px rgba(0,30,59,.06) !important;
+}
+.brand { color: #001E3B !important; }
+
+/* Botones generales */
+.back {
+  border-color: #E5E5EA !important;
+  background: #FFFFFF !important;
+  color: #001E3B !important;
+}
+.back:hover { background: #F5F5F7 !important; }
+
+/* ── HERO ── */
+.hero h1 { color: #001E3B !important; }
+.hero h1 .hl {
+  background: linear-gradient(120deg,#1A7E7F,#00535E) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* ── CARDS ── */
+.card {
+  background: #FFFFFF !important;
+  border-color: #E5E5EA !important;
+  color: #1D1D1F !important;
+  box-shadow: 0 2px 8px rgba(0,30,59,.05) !important;
+}
+.card:hover {
+  border-color: rgba(26,126,127,.4) !important;
+  box-shadow: 0 8px 28px rgba(26,126,127,.14) !important;
+}
+.card h3 { color: #001E3B !important; }
+.card p  { color: #6E6E73 !important; }
+.card .go { color: #1A7E7F !important; }
+.card .glow { opacity:.07 !important; }
+.card.c1 .glow { background:#1A7E7F !important; }
+.card.c2 .glow { background:#00535E !important; }
+.card.c3 .glow { background:#F59E0B !important; }
+.tag {
+  background: rgba(26,126,127,.1) !important;
+  color: #00535E !important;
+}
+
+/* ── SCREENS ── */
+.screen h2 { color: #001E3B !important; }
+.screen .sub { color: #6E6E73 !important; }
+.how { color: #1A7E7F !important; }
+
+/* ── SPINNER ── */
+.spinner .inner {
+  background: linear-gradient(160deg,#FFFFFF,#F5F5F7) !important;
+  border-color: #E5E5EA !important;
+}
+.spinner .center { color: #001E3B !important; }
+.spinner .ring { box-shadow: 0 0 0 5px rgba(26,126,127,.15), var(--shadow) !important; }
+
+/* ── BOTONES CTA ── */
+.spin-btn {
+  background: linear-gradient(135deg,#1A7E7F,#00535E) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 24px rgba(26,126,127,.30) !important;
+}
+.btn-ghost {
+  border-color: #E5E5EA !important;
+  background: #FFFFFF !important;
+  color: #001E3B !important;
+}
+.btn-ghost:hover { background: #F5F5F7 !important; }
+.btn-ghost.good {
+  background: rgba(26,126,127,.10) !important;
+  border-color: rgba(26,126,127,.40) !important;
+  color: #00535E !important;
+}
+.link-mini { color: #6E6E73 !important; }
+.link-mini:hover { color: #001E3B !important; }
+.btn-mini2 {
+  background: linear-gradient(135deg,#1A7E7F,#00535E) !important;
+  color: #FFFFFF !important;
+}
+.btn-mini2.ghost {
+  background: #F5F5F7 !important;
+  color: #001E3B !important;
+  border-color: #E5E5EA !important;
+}
+
+/* ── REVEAL CARD ── */
+.reveal {
+  background: linear-gradient(160deg,rgba(26,126,127,.06),#FFFFFF) !important;
+  border-color: rgba(26,126,127,.30) !important;
+  color: #1D1D1F !important;
+  box-shadow: 0 4px 20px rgba(26,126,127,.10) !important;
+}
+.reveal .kicker { color: #1A7E7F !important; }
+.reveal .big { color: #001E3B !important; }
+.scoreboard .chip {
+  background: rgba(26,126,127,.10) !important;
+  border-color: rgba(26,126,127,.25) !important;
+  color: #00535E !important;
+}
+.reveal .scorrow { border-color: #E5E5EA !important; color: #1D1D1F !important; }
+.reveal .scorrow b { color: #1A7E7F !important; }
+.reveal .role { background: rgba(26,126,127,.10) !important; color: #00535E !important; }
+.reveal .team { color: #6E6E73 !important; }
+.reveal .q { color: #001E3B !important; }
+.reveal .author { color: #6E6E73 !important; }
+.answer { border-color: #E5E5EA !important; color: #1D1D1F !important; }
+.answer .lab { color: #1A7E7F !important; }
+.progress { color: #6E6E73 !important; }
+
+/* ── AGENDA ── */
+.agenda-sub { color: #6E6E73 !important; }
+.ag-time { color: #1A7E7F !important; font-weight:700 !important; }
+.ag-line::before { background: #E5E5EA !important; }
+.ag-dot {
+  background: #FFFFFF !important;
+  border-color: #D1D5DB !important;
+}
+.ag-item.act .ag-dot {
+  background: #1A7E7F !important;
+  border-color: #1A7E7F !important;
+  box-shadow: 0 0 0 4px rgba(26,126,127,.15) !important;
+}
+.ag-card {
+  background: #FFFFFF !important;
+  border-color: #E5E5EA !important;
+  color: #1D1D1F !important;
+  box-shadow: 0 1px 4px rgba(0,30,59,.05) !important;
+}
+.ag-item.act .ag-card {
+  border-color: rgba(26,126,127,.40) !important;
+  background: rgba(26,126,127,.05) !important;
+  box-shadow: 0 2px 12px rgba(26,126,127,.10) !important;
+}
+.ag-title { color: #001E3B !important; }
+.ag-desc  { color: #6E6E73 !important; }
+.ag-badge {
+  background: rgba(0,30,59,.06) !important;
+  color: #6E6E73 !important;
+}
+
+/* ── VIDEO WRAP ── */
+.video-wrap { border-color: #E5E5EA !important; background: #F5F5F7 !important; }
+
+/* ── CULTURA / LECTURA ── */
+.culture .block h3 { color: #001E3B !important; }
+.imgbox { border-color: #E5E5EA !important; background: #F5F5F7 !important; }
+.placeholder { color: #6E6E73 !important; }
+.read-list li {
+  background: #FFFFFF !important;
+  border-color: #E5E5EA !important;
+  border-left-color: #1A7E7F !important;
+  color: #1D1D1F !important;
+}
+.anniv-title h1 {
+  background: linear-gradient(120deg,#1A7E7F,#00535E) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* ── ADMIN ── */
+.admin {
+  background: #FFFFFF !important;
+  border-color: #E5E5EA !important;
+  color: #1D1D1F !important;
+}
+.admin h4 { color: #001E3B !important; }
+.admin .muted { color: #6E6E73 !important; }
+.admin .qitem { border-color: #E5E5EA !important; }
+.admin .qitem label { color: #1D1D1F !important; }
+.admin .qitem .who { color: #6E6E73 !important; }
+.admin input {
+  background: #F5F5F7 !important;
+  border-color: #E5E5EA !important;
+  color: #1D1D1F !important;
+}
+.admin .badge.on { background: rgba(26,126,127,.12) !important; color: #00535E !important; }
+.admin .badge.off { background: #F5F5F7 !important; color: #6E6E73 !important; }
+.admin .tgt { color: #1A7E7F !important; background: rgba(26,126,127,.10) !important; }
+
+/* ── TIMER ── */
+.timer .tnum { color: #001E3B !important; }
+.timer .tlab { color: #6E6E73 !important; }
+.timer.warn .tnum { color: #EF4444 !important; }
+
+/* ── MISC ── */
+.footer-note { color: #B0B0B0 !important; }
+.demo-note { color: #6E6E73 !important; }
+#coming-soon { color: #1D1D1F !important; }
+#coming-soon h2 { color: #001E3B !important; }
+
+/* ── BOTÓN PRESENTAR ── */
+#present-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #1A7E7F !important;
+  background: linear-gradient(135deg,#1A7E7F,#00535E) !important;
+  color: #FFFFFF !important;
+  padding: 9px 16px !important;
+  border-radius: 999px !important;
+  font: 600 13px 'Inter' !important;
+  cursor: pointer !important;
+  transition: .2s !important;
+}
+#present-btn:hover { opacity: .88 !important; transform: translateY(-1px) !important; }
+.topbar-right { display:flex; gap:10px; align-items:center; }
+
+/* ══════════════════════════════════════════════════════
+   MODO PRESENTACIÓN (fullscreen 16:9 slide layout)
+   ══════════════════════════════════════════════════════ */
+
+/* Overlay de presentación */
+#present-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #001E3B;
+  z-index: 9999;
+  flex-direction: column;
+}
+body.present-mode #present-overlay { display: flex; }
+
+/* Barra superior en modo presentación */
+#pres-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background: rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  flex-shrink: 0;
+}
+#pres-title {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: -.01em;
+}
+#pres-counter {
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+  font-weight: 600;
+}
+#pres-close {
+  border: 1px solid rgba(255,255,255,.20);
+  background: rgba(255,255,255,.08);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font: 600 12px 'Inter';
+  cursor: pointer;
+  transition: .2s;
+}
+#pres-close:hover { background: rgba(255,255,255,.16); }
+
+/* Contenedor del slide (16:9) */
+#pres-slide-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px 24px;
+}
+#pres-slide {
+  width: 100%;
+  max-width: min(calc(100% - 48px), calc((100vh - 140px) * 16 / 9));
+  aspect-ratio: 16 / 9;
+  background: #FFFFFF;
+  border-radius: 12px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0,0,0,.5);
+  position: relative;
+}
+#pres-slide-content {
+  flex: 1;
+  overflow: auto;
+  padding: 32px 48px;
+  display: flex;
+  flex-direction: column;
+}
+#pres-slide-content .screen { display:block !important; }
+#pres-slide-content .screen h2 { font-size: clamp(22px,3vw,34px) !important; }
+#pres-slide-content .stage { gap: 16px !important; }
+#pres-slide-content .spinner { width: min(40vw, 220px) !important; }
+#pres-slide-content .reveal { max-width: 100% !important; }
+
+/* Barra de navegación inferior */
+#pres-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 24px;
+  background: rgba(255,255,255,.05);
+  border-top: 1px solid rgba(255,255,255,.08);
+  flex-shrink: 0;
+}
+.pres-nav-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.20);
+  background: rgba(255,255,255,.08);
+  color: #FFFFFF;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex; align-items:center; justify-content:center;
+  transition: .2s;
+}
+.pres-nav-btn:hover { background: rgba(255,255,255,.18); }
+.pres-nav-btn:disabled { opacity: .3; cursor: not-allowed; }
+.pres-dots { display: flex; gap: 6px; align-items: center; }
+.pres-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.3);
+  transition: .2s;
+  cursor: pointer;
+}
+.pres-dot.active {
+  background: #1A7E7F;
+  width: 20px;
+  border-radius: 3px;
+}
+#pres-slide-content { transition: opacity .25s ease; }
+#pres-slide-content.transitioning { opacity: 0; }
+</style>
+
 </head>
 <body>
 <div id="stars" aria-hidden="true"></div>
@@ -245,7 +611,10 @@
 <path d="M94.5192 28.2752H92.1104V21.1183C92.1104 18.2016 93.765 16.0202 96.8794 16.0202C97.6337 16.0202 98.4123 16.1673 99.0205 16.4614V18.8634C98.4366 18.5202 97.7553 18.3487 97.0984 18.3487C95.4925 18.3487 94.5192 19.4516 94.5192 21.2163V28.2752Z" fill="#334155"/>
 <path d="M105.285 28.5693C101.829 28.5693 99.299 25.7261 99.299 22.2457C99.299 18.8144 102.024 15.9712 105.65 15.9712C109.251 15.9712 112 18.6673 112 22.2457V28.2752H109.713V26.1673C108.813 27.6379 107.231 28.5693 105.285 28.5693ZM105.65 26.2653C107.888 26.2653 109.591 24.4516 109.591 22.2702C109.591 20.0644 107.888 18.2506 105.65 18.2506C103.435 18.2506 101.708 20.0644 101.708 22.2702C101.708 24.4516 103.435 26.2653 105.65 26.2653Z" fill="#334155"/>
 </svg></span> Summit México 2026</div>
+    <div class="topbar-right">
     <button class="back hidden" id="backBtn" onclick="goHome()">← Volver al inicio</button>
+    <button id="present-btn" onclick="enterPresentation()">⛶ Presentar</button>
+  </div>
   </div>
 
   <!-- HOME -->
