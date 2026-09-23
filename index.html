@@ -717,7 +717,7 @@ body.present-mode #present-overlay { display: flex; }
       <p class="sub" id="videoSub"></p>
       <div id="video-photo-wrap" style="text-align:center;padding:2rem 0 1rem">
         <img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David Sánchez" style="width:220px;height:280px;object-fit:cover;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.3);">
-        <p style="font-size:1.4rem;margin-top:1.5rem;color:#fff;">Pero antes... ¿qué es un ERP? 🎤</p>
+        <p style="font-size:1.6rem;font-weight:600;margin-top:1.8rem;color:#1D1D1F;">Pero antes... ¿qué es un ERP? 🎤</p>
       </div>
       <div class="video-wrap" id="video-iframe-wrap" style="display:none">
         <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -894,6 +894,8 @@ function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTi
       window._pendingVideo='';
       if(pw)pw.style.display='block';
       if(iw)iw.style.display='none';
+      const _vsEl=document.getElementById('videoSub');
+      if(_vsEl)_vsEl.style.display='none';
       show('video');
       const vf=document.getElementById('videoFrame');
       if(vf)vf.src='';
@@ -902,6 +904,8 @@ function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTi
     }else{
       if(pw)pw.style.display='none';
       if(iw)iw.style.display='';
+      const _vsEl2=document.getElementById('videoSub');
+      if(_vsEl2)_vsEl2.style.display='';
       _origOVI(i);
     }
   };
