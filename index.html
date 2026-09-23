@@ -713,11 +713,14 @@ body.present-mode #present-overlay { display: flex; }
 
   <!-- VIDEO (genérico) -->
   <section id="video" class="screen hidden">
-      <h2>Hablemos de producto</h2>
-      <p class="sub">con David Sánchez</p>
-      <div style="text-align:center;padding:2rem 0;">
+      <h2 id="videoTitle">Hablemos de producto</h2>
+      <p class="sub" id="videoSub">con David Sánchez</p>
+      <div id="video-photo-wrap" style="text-align:center;padding:2rem 0 1rem">
         <img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David Sánchez" style="width:220px;height:280px;object-fit:cover;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.3);">
         <p style="font-size:1.4rem;margin-top:1.5rem;color:#fff;">Pero antes... ¿qué es un ERP? 🎤</p>
+      </div>
+      <div class="video-wrap" id="video-iframe-wrap" style="display:none">
+        <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
     </section>
 
@@ -813,7 +816,7 @@ const AGENDA=[
   {time:"11:30 – 12:30",icon:"🇲🇽", title:"Espacio sobre el mercado mexicano", who:"Jakub Roubal · Ángelo Dalí Anaya", game:"coming-soon"},
   {time:"12:30 – 13:00",icon:"💚", title:"Cultura y lectura", who:"Alejo Aguilar · Catalina Bustamante", game:"cultura", cta:"Abrir ▶"},
   {time:"13:00 – 14:30",icon:"🍽️", title:"Comida", tag:"Break"},
-  {time:"14:30 – 15:30",icon:"🚀", title:"Charla sobre producto, versión México", who:"David Sánchez", video:"vIdD0u900Tk", vtitle:"🚀 Charla sobre producto", vsub:"Una mirada al producto de Alegra y hacia dónde vamos. 🚀", cta:"Ver ▶"},
+  {time:"14:30 – 15:30",icon:"🚀", title:"Charla sobre producto, versión México", who:"David Sánchez", vtitle:"🚀 Charla sobre producto", vsub:"Una mirada al producto de Alegra y hacia dónde vamos. 🚀", cta:"Ver ▶"},
   {time:"15:30 – 16:30",icon:"🎙️", title:"Preguntas a directores", who:"Catalina Bustamante · Alejo Aguilar", game:"game-preguntas"},
   {time:"16:30 – 18:00",icon:"🤝", title:"Trabajo por equipos", tag:"Taller"}
 ];
@@ -878,6 +881,29 @@ function slot(spinnerId,centerId,pool,finalText,onDone){
 }
 
 function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTitle').textContent=it.vtitle||'Video';document.getElementById('videoSub').textContent=it.vsub||'';window._pendingVideo=it.video;show('video');}
+// Photo mode patch for openVideoByIndex
+(function(){
+  const _origOVI=window.openVideoByIndex;
+  window.openVideoByIndex=function(i){
+    const it=AGENDA[i];
+    const pw=document.getElementById('video-photo-wrap');
+    const iw=document.getElementById('video-iframe-wrap');
+    if(it&&!it.video){
+      document.getElementById('videoTitle').textContent=it.vtitle||'Hablemos de producto';
+      document.getElementById('videoSub').textContent=it.vsub||'';
+      window._pendingVideo='';
+      if(pw)pw.style.display='block';
+      if(iw)iw.style.display='none';
+      show('video');
+      const vf=document.getElementById('videoFrame');
+      if(vf)vf.src='';
+    }else{
+      if(pw)pw.style.display='none';
+      if(iw)iw.style.display='';
+      _origOVI(i);
+    }
+  };
+})();
 const screens=['home','game-relevo','game-preguntas','game-terminos','video','cultura','coming-soon'];
 function key(e,id){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(id);}}
 function show(id){
