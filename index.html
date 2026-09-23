@@ -713,8 +713,8 @@ body.present-mode #present-overlay { display: flex; }
 
   <!-- VIDEO (genérico) -->
   <section id="video" class="screen hidden">
-      <h2 id="videoTitle">Hablemos de producto</h2>
-      <p class="sub" id="videoSub">con David Sánchez</p>
+      <h2 id="videoTitle">Hablemos de producto con David Sánchez</h2>
+      <p class="sub" id="videoSub"></p>
       <div id="video-photo-wrap" style="text-align:center;padding:2rem 0 1rem">
         <img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David Sánchez" style="width:220px;height:280px;object-fit:cover;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.3);">
         <p style="font-size:1.4rem;margin-top:1.5rem;color:#fff;">Pero antes... ¿qué es un ERP? 🎤</p>
@@ -880,7 +880,7 @@ function slot(spinnerId,centerId,pool,finalText,onDone){
   })();
 }
 
-function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTitle').textContent=it.vtitle||'Video';document.getElementById('videoSub').textContent=it.vsub||'';window._pendingVideo=it.video;show('video');}
+function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTitle').textContent=it.vtitle||'Video';document.getElementById('videoSub').textContent='';window._pendingVideo=it.video;show('video');}
 // Photo mode patch for openVideoByIndex
 (function(){
   const _origOVI=window.openVideoByIndex;
@@ -889,7 +889,7 @@ function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTi
     const pw=document.getElementById('video-photo-wrap');
     const iw=document.getElementById('video-iframe-wrap');
     if(it&&it.photo){
-      document.getElementById('videoTitle').textContent=it.vtitle||'Hablemos de producto';
+      document.getElementById('videoTitle').textContent='Hablemos de producto con David Sánchez';
       document.getElementById('videoSub').textContent=it.vsub||'';
       window._pendingVideo='';
       if(pw)pw.style.display='block';
