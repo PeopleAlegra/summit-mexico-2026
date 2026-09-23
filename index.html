@@ -897,6 +897,8 @@ function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTi
       show('video');
       const vf=document.getElementById('videoFrame');
       if(vf)vf.src='';
+      const _vs=document.getElementById('videoSub');
+      if(_vs)_vs.textContent='';
     }else{
       if(pw)pw.style.display='none';
       if(iw)iw.style.display='';
