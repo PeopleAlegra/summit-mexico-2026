@@ -892,7 +892,10 @@ function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTi
       document.getElementById('videoTitle').innerHTML='Hablemos de producto con <span style="color:#1A7E7F;font-weight:inherit">David Sánchez</span>';
       document.getElementById('videoSub').textContent=it.vsub||'';
       window._pendingVideo='';
-      if(pw)pw.style.display='flex';
+      if(pw){
+        pw.style.cssText='display:flex;flex-direction:row;align-items:center;gap:3rem;width:100%;box-sizing:border-box;padding:1.5rem 2rem 2.5rem';
+        pw.innerHTML='<div style="display:flex;flex-direction:column;align-items:center;gap:1rem;flex-shrink:0"><img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David S\u00e1nchez" style="max-width:420px;height:auto;border-radius:16px;box-shadow:0 6px 28px rgba(0,0,0,0.18)"><div style="background:#F0FAFA;border:1.5px solid rgba(26,126,127,0.3);color:#001E3B;font-weight:600;font-size:0.95rem;padding:0.45rem 1.4rem;border-radius:100px">David S\u00e1nchez \u00b7 Head of Product<\/div><\/div><div style="display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1"><p style="font-size:1.5rem;font-weight:600;color:#001E3B;background:rgba(26,126,127,0.12);border:1.5px solid rgba(26,126,127,0.28);padding:0.7rem 2.2rem;border-radius:100px;text-align:center;margin:0">Pero antes... \u00bfqu\u00e9 es un ERP? \ud83c\udfa4<\/p><\/div>';
+      }
       if(iw)iw.style.display='none';
       const _vsEl=document.getElementById('videoSub');
       if(_vsEl)_vsEl.style.display='none';
