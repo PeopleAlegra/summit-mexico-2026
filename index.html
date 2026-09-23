@@ -916,11 +916,12 @@ function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTi
   };
 })();
 window.openPeroAntes = function(){
-  if(window.active && window.SCREENS){
-    var pi=window.SCREENS.findIndex(function(s){return s.id==='pero-antes';});
-    if(pi!==-1){window.idx=pi;if(typeof window.render==='function')window.render();}
-    else show('pero-antes');
-  } else { show('pero-antes'); }
+  var ov=document.getElementById('present-overlay');
+  if(ov && ov.style.display==='flex' && window.presNav){
+    window.presNav(1);
+  } else {
+    show('pero-antes');
+  }
 };
 const screens=['home','game-relevo','game-preguntas','game-terminos','video','cultura','coming-soon','pero-antes'];
 function key(e,id){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(id);}}
