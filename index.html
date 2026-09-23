@@ -892,7 +892,7 @@ function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTi
       document.getElementById('videoTitle').innerHTML='Hablemos de producto con <span style="color:#1A7E7F;font-weight:inherit">David Sánchez</span>';
       document.getElementById('videoSub').textContent=it.vsub||'';
       window._pendingVideo='';
-      if(pw)pw.style.display='block';
+      if(pw)pw.style.display='flex';
       if(iw)iw.style.display='none';
       const _vsEl=document.getElementById('videoSub');
       if(_vsEl)_vsEl.style.display='none';
