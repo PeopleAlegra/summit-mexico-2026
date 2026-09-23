@@ -725,20 +725,10 @@ body.present-mode #present-overlay { display: flex; }
     </section>
     <section id="pero-antes" class="screen hidden">
       <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:80vh;gap:2.5rem;padding:2rem">
-        <p style="font-size:3.5rem;font-weight:700;color:#001E3B;text-align:center;margin:0;line-height:1.2">Pero antes... \u00bfqu\u00e9 es un ERP? \ud83c\udfa4<\/p>
-        <button onclick="openVideoByIndex(8)" style="background:transparent;border:1.5px solid #E5E5EA;color:#6E6E73;padding:0.5rem 1.5rem;border-radius:100px;font-size:0.9rem;cursor:pointer">\u2190 Volver<\/button>
-      <\/div>
-    <\/section>
-
-
-  <!-- PRÓXIMAMENTE -->
-  <section id="coming-soon" class="screen hidden">
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;padding:2rem;">
-      <div style="font-size:4rem;margin-bottom:1rem;">🚧</div>
-      <h2 style="font-size:1.8rem;margin-bottom:0.5rem;">Contenido en preparación</h2>
-      <p class="sub" style="max-width:420px;">Esta sección estará lista muy pronto.<br>¡Vuelve durante el Summit México para verla! 🇲🇽✨</p>
-    </div>
-  </section>
+        <p style="font-size:3.5rem;font-weight:700;color:#001E3B;text-align:center;margin:0;line-height:1.2">Pero antes... ¿qué es un ERP? 🎤</p>
+        <button onclick="openVideoByIndex(8)" style="background:transparent;border:1.5px solid #E5E5EA;color:#6E6E73;padding:0.5rem 1.5rem;border-radius:100px;font-size:0.9rem;cursor:pointer">← Volver</button>
+      </div>
+    </section>
 
   <!-- CULTURA / LECTURA -->
   <section id="cultura" class="screen hidden">
@@ -900,7 +890,7 @@ function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTi
       window._pendingVideo='';
       if(pw){
         pw.style.cssText='display:flex;flex-direction:column;align-items:center;gap:1rem;width:100%;box-sizing:border-box;padding:1.5rem 1rem 2.5rem';
-        pw.innerHTML='<img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David S\u00e1nchez" style="max-width:400px;height:auto;border-radius:16px;box-shadow:0 6px 28px rgba(0,0,0,0.18)"><div style="background:#F0FAFA;border:1.5px solid rgba(26,126,127,0.3);color:#001E3B;font-weight:600;font-size:0.95rem;padding:0.45rem 1.4rem;border-radius:100px">David S\u00e1nchez \u00b7 Head of Product<\/div><button onclick="openPeroAntes()" style="margin-top:0.5rem;background:#1A7E7F;color:#fff;border:none;padding:0.65rem 2rem;border-radius:100px;font-size:1rem;font-weight:600;cursor:pointer">Continuar \u2192<\/button>';
+        pw.innerHTML='<img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David S\u00e1nchez" style="max-width:400px;height:auto;border-radius:16px;box-shadow:0 6px 28px rgba(0,0,0,0.18)"><div style="background:#F0FAFA;border:1.5px solid rgba(26,126,127,0.3);color:#001E3B;font-weight:600;font-size:0.95rem;padding:0.45rem 1.4rem;border-radius:100px">David S\u00e1nchez \u00b7 Head of Product<\/div><button onclick="event.stopPropagation();event.stopImmediatePropagation();openPeroAntes()" style="margin-top:0.5rem;background:#1A7E7F;color:#fff;border:none;padding:0.65rem 2rem;border-radius:100px;font-size:1rem;font-weight:600;cursor:pointer">Continuar \u2192<\/button>';
       }
       if(iw)iw.style.display='none';
       const _vsEl=document.getElementById('videoSub');
