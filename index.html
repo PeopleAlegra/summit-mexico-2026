@@ -910,12 +910,12 @@ function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTi
   };
 })();
 window.openPeroAntes = function(){ show('pero-antes'); };
-const screens=['home','game-relevo','game-preguntas','game-terminos','video','cultura','coming-soon'];
+const screens=['home','game-relevo','game-preguntas','game-terminos','video','cultura','coming-soon','pero-antes'];
 function key(e,id){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(id);}}
 function show(id){
   const vf=document.getElementById('videoFrame');
   if(vf && id!=='video') vf.src=''; // detener video al salir
-  screens.forEach(s=>document.getElementById(s).classList.toggle('hidden',s!==id));
+  screens.forEach(s=>{const _e=document.getElementById(s);if(_e)_e.classList.toggle('hidden',s!==id);});
   document.getElementById('backBtn').classList.toggle('hidden',id==='home');
   document.body.classList.toggle('serious', id==='game-relevo'); // menos estrellas, más serio
   window.scrollTo({top:0,behavior:'smooth'});
