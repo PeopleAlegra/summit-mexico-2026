@@ -816,7 +816,7 @@ const AGENDA=[
   {time:"11:30 – 12:30",icon:"🇲🇽", title:"Espacio sobre el mercado mexicano", who:"Jakub Roubal · Ángelo Dalí Anaya", game:"coming-soon"},
   {time:"12:30 – 13:00",icon:"💚", title:"Cultura y lectura", who:"Alejo Aguilar · Catalina Bustamante", game:"cultura", cta:"Abrir ▶"},
   {time:"13:00 – 14:30",icon:"🍽️", title:"Comida", tag:"Break"},
-  {time:"14:30 – 15:30",icon:"🚀", title:"Charla sobre producto, versión México", who:"David Sánchez", vtitle:"🚀 Charla sobre producto", vsub:"Una mirada al producto de Alegra y hacia dónde vamos. 🚀", cta:"Ver ▶"},
+  {time:"14:30 – 15:30",icon:"🚀", title:"Charla sobre producto, versión México", who:"David Sánchez", video:"vIdD0u900Tk", photo:true, vtitle:"🚀 Charla sobre producto", vsub:"Una mirada al producto de Alegra y hacia dónde vamos. 🚀", cta:"Ver ▶"},
   {time:"15:30 – 16:30",icon:"🎙️", title:"Preguntas a directores", who:"Catalina Bustamante · Alejo Aguilar", game:"game-preguntas"},
   {time:"16:30 – 18:00",icon:"🤝", title:"Trabajo por equipos", tag:"Taller"}
 ];
@@ -888,7 +888,7 @@ function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTi
     const it=AGENDA[i];
     const pw=document.getElementById('video-photo-wrap');
     const iw=document.getElementById('video-iframe-wrap');
-    if(it&&!it.video){
+    if(it&&it.photo){
       document.getElementById('videoTitle').textContent=it.vtitle||'Hablemos de producto';
       document.getElementById('videoSub').textContent=it.vsub||'';
       window._pendingVideo='';
