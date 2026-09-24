@@ -550,6 +550,7 @@ body.present-mode #present-overlay { display: flex; }
         #pres-slide-content #coming-soon,
         #pres-slide-content #pymes { height:100% !important; position:relative !important; }
         #pres-slide-content #mercado-intro { height:100% !important; width:100% !important; display:flex !important; align-items:center !important; justify-content:center !important; }
+        #pres-slide-content #comida { height:100% !important; width:100% !important; display:flex !important; align-items:center !important; justify-content:center !important; }
         #pres-slide-content #coming-soon > div:first-child,
         #pres-slide-content #pymes > div:first-child { position:absolute !important; top:0 !important; left:0 !important; right:0 !important; bottom:0 !important; display:flex !important; align-items:center !important; justify-content:center !important; }
         #pres-slide-content #coming-soon h2,
@@ -720,11 +721,12 @@ body.present-mode #present-overlay { display: flex; }
 
   <!-- VIDEO (genérico) -->
   <section id="video" class="screen hidden">
-      <h2 id="videoTitle" style="text-align:center">Hablemos de producto<br>con David Sánchez</h2>
-      <p class="sub" id="videoSub"></p>
-      <div id="video-photo-wrap" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;padding:1.5rem 1rem 2.5rem;gap:2rem;box-sizing:border-box">
-        <img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David Sánchez" style="max-width:340px;height:auto;border-radius:16px;box-shadow:0 6px 28px rgba(0,0,0,0.18);">
-        <p style="font-size:1.5rem;font-weight:600;margin-top:2rem;color:#001E3B;display:inline-block;background:rgba(26,126,127,0.12);border:1.5px solid rgba(26,126,127,0.28);padding:0.7rem 2.2rem;border-radius:100px;">Pero antes... ¿qué es un ERP? 🎤</p>
+      <h2 id="videoTitle" style="text-align:center">Hablemos de producto<br>con <span style="color:#1A7E7F;font-weight:inherit">David Sánchez</span></h2>
+      <p class="sub" id="videoSub" style="display:none"></p>
+      <div id="video-photo-wrap" style="display:flex;flex-direction:column;align-items:center;gap:1rem;width:100%;box-sizing:border-box;padding:1.5rem 1rem 2.5rem">
+        <img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David Sánchez" style="max-width:400px;height:auto;border-radius:16px;box-shadow:0 6px 28px rgba(0,0,0,0.18)">
+        <div style="background:#F0FAFA;border:1.5px solid rgba(26,126,127,0.3);color:#001E3B;font-weight:600;font-size:0.95rem;padding:0.45rem 1.4rem;border-radius:100px">David Sánchez · Head of Product</div>
+        <button onclick="event.stopPropagation();event.stopImmediatePropagation();openPeroAntes()" style="margin-top:0.5rem;background:#1A7E7F;color:#fff;border:none;padding:0.65rem 2rem;border-radius:100px;font-size:1rem;font-weight:600;cursor:pointer">Continuar →</button>
       </div>
       <div class="video-wrap" id="video-iframe-wrap" style="display:none">
         <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -733,7 +735,7 @@ body.present-mode #present-overlay { display: flex; }
     <section id="pero-antes" class="screen hidden">
       <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:80vh;gap:2.5rem;padding:2rem">
         <p style="font-size:3.5rem;font-weight:700;color:#001E3B;text-align:center;margin:0;line-height:1.2">Pero antes... ¿qué es un ERP? 🎤</p>
-        <button onclick="openVideoByIndex(8)" style="background:transparent;border:1.5px solid #E5E5EA;color:#6E6E73;padding:0.5rem 1.5rem;border-radius:100px;font-size:0.9rem;cursor:pointer">← Volver</button>
+        <button onclick="openVideoByIndex(5)" style="background:transparent;border:1.5px solid #E5E5EA;color:#6E6E73;padding:0.5rem 1.5rem;border-radius:100px;font-size:0.9rem;cursor:pointer">← Volver</button>
       </div>
     </section>
 <section id="coming-soon" class="screen hidden" style="background:#0B1929;flex:1;min-height:0">
@@ -797,6 +799,14 @@ body.present-mode #present-overlay { display: flex; }
 </section>
 
   <!-- CULTURA / LECTURA -->
+<section id="comida" class="screen hidden" style="background:#0B2417;height:100%;width:100%;display:flex;align-items:center;justify-content:center;">
+  <div style="text-align:center;padding:2rem;">
+    <div style="font-size:4rem;margin-bottom:1rem;">🍽️</div>
+    <h1 style="color:#ffffff;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;margin:0 0 1rem 0;line-height:1.2;">Comida</h1>
+    <div style="width:80px;height:4px;background:#1A7E7F;margin:0 auto;border-radius:2px;"></div>
+    <p style="color:rgba(255,255,255,0.55);margin-top:1.5rem;font-size:1.1rem;">13:30 – 15:00</p>
+  </div>
+</section>
   <section id="cultura" class="screen hidden">
     <div class="culture-pager">
       <div class="cpage" data-step="0">
@@ -893,10 +903,10 @@ const AGENDA=[
   {time:"9:30 – 10:00", icon:"🧘", title:"Meditación", who:"Young Han", video:"lt00i8gF8yU", vtitle:"🧘 Meditación", vsub:"Un momento para respirar y centrarnos. 🌿", cta:"Ver ▶"},
   {time:"10:00 – 10:30",icon:"🎉", title:"Rompehielos", who:"Fernanda Alva", game:"game-relevo"},
   {time:"10:30 – 11:30",icon:"🧠", title:"Juego de conceptos", who:"Alejo Aguilar · Fernanda Alva", game:"game-terminos"},
-  {time:"11:30 – 12:30",icon:"🇲🇽", title:"Espacio sobre el mercado mexicano", who:"Jakub Roubal · Ángelo Dalí Anaya", game:"coming-soon"},
-  {time:"12:30 – 13:00",icon:"💚", title:"Cultura y lectura", who:"Alejo Aguilar · Catalina Bustamante", game:"cultura", cta:"Abrir ▶"},
-  {time:"13:00 – 14:30",icon:"🍽️", title:"Comida", tag:"Break"},
-  {time:"14:30 – 15:30",icon:"🚀", title:"Charla sobre producto, versión México", who:"David Sánchez", video:"vIdD0u900Tk", photo:true, vtitle:"🚀 Charla sobre producto", vsub:"Una mirada al producto de Alegra y hacia dónde vamos. 🚀", cta:"Ver ▶"},
+  {time:"11:30 – 12:30",icon:"🚀", title:"Charlemos sobre producto", who:"David Sánchez", video:"vIdD0u900Tk", photo:true, vtitle:"🚀 Charla sobre producto", vsub:"Una mirada al producto de Alegra y hacia dónde vamos. 🚀", cta:"Ver ▶"},
+  {time:"12:30 – 13:30",icon:"🇲🇽", title:"Espacio sobre el mercado mexicano", who:"Jakub Roubal · Ángelo Dalí Anaya", game:"coming-soon"},
+  {time:"13:30 – 15:00",icon:"🍽️", title:"Comida", tag:"Break", game:"comida"},
+  {time:"15:00 – 15:30",icon:"💚", title:"Cultura y lectura", who:"Alejo Aguilar · Catalina Bustamante", game:"cultura", cta:"Abrir ▶"},
   {time:"15:30 – 16:30",icon:"🎙️", title:"Preguntas a directores", who:"Catalina Bustamante · Alejo Aguilar", game:"game-preguntas"},
   {time:"16:30 – 18:00",icon:"🤝", title:"Trabajo por equipos", tag:"Taller"}
 ];
@@ -1001,7 +1011,7 @@ window.openPeroAntes = function(){
     show('pero-antes');
   }
 };
-const screens=['home','game-relevo','game-preguntas','game-terminos','video','cultura','coming-soon','pymes','pero-antes'];
+const screens=['home','game-relevo','game-preguntas','game-terminos','video','cultura','coming-soon','pymes','pero-antes','comida'];
 function key(e,id){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(id);}}
 function show(id){
   const vf=document.getElementById('videoFrame');
@@ -1314,12 +1324,13 @@ renderAgenda();
     {id:'home',          label:'Inicio – Agenda'},
     {id:'game-relevo',   label:'Rompehielos'},
     {id:'game-terminos', label:'Juego de Conceptos'},
+    {id:'video',         label:'Charlemos sobre producto'},
+    {id:'pero-antes',    label:'¿Qué es un ERP?'},
     {id:'mercado-intro', label:'Espacio sobre el mercado mexicano'},
     {id:'coming-soon',   label:'Alegra en cifras'},
-      {id:'pymes',         label:'El salto de las pymes'},
+    {id:'pymes',         label:'El salto de las pymes'},
+    {id:'comida',        label:'Comida'},
     {id:'cultura',       label:'Cultura & Lectura'},
-    {id:'video',         label:'Charla de Producto'},
-    {id:'pero-antes',     label:'¿Qué es un ERP?'},
     {id:'game-preguntas',label:'Preguntas a Directores'}
   ];
   var idx=0, active=false, _sec=null, _marker=null;
