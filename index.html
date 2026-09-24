@@ -551,6 +551,7 @@ body.present-mode #present-overlay { display: flex; }
         #pres-slide-content #pymes { height:100% !important; position:relative !important; }
         #pres-slide-content #mercado-intro { height:100% !important; width:100% !important; display:flex !important; align-items:center !important; justify-content:center !important; }
         #pres-slide-content #comida { height:100% !important; width:100% !important; display:flex !important; align-items:center !important; justify-content:center !important; }
+        #pres-slide-content #meditacion { height:100% !important; width:100% !important; display:flex !important; align-items:center !important; justify-content:center !important; }
         #pres-slide-content #coming-soon > div:first-child,
         #pres-slide-content #pymes > div:first-child { position:absolute !important; top:0 !important; left:0 !important; right:0 !important; bottom:0 !important; display:flex !important; align-items:center !important; justify-content:center !important; }
         #pres-slide-content #coming-soon h2,
@@ -642,7 +643,7 @@ body.present-mode #present-overlay { display: flex; }
 </svg></span><h1>Summit México <span class="hl">Alegra</span> 2026</h1></div>
     <p class="agenda-sub">Agenda del día · toca una actividad para empezar ✨</p>
     <div class="agenda" id="agenda"></div>
-    <p class="footer-note">86 Alegritos · 16 conceptos 💚</p>
+
   </section>
 
   <!-- VAMOS A CONOCERNOS -->
@@ -799,6 +800,15 @@ body.present-mode #present-overlay { display: flex; }
 </section>
 
   <!-- CULTURA / LECTURA -->
+<section id="meditacion" class="screen hidden" style="background:#0B1526;height:100%;width:100%;display:flex;align-items:center;justify-content:center;">
+  <div style="text-align:center;padding:1rem 2rem;width:100%;max-width:860px;box-sizing:border-box;">
+    <h1 style="color:#ffffff;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700;margin:0 0 1.5rem 0;">🧘 Meditación</h1>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+      <iframe src="https://www.youtube.com/embed/lt00i8gF8yU?rel=0" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <p style="color:rgba(255,255,255,0.5);margin-top:1rem;font-size:0.9rem;">Young Han · 9:30 – 10:00</p>
+  </div>
+</section>
 <section id="comida" class="screen hidden" style="background:#0B2417;height:100%;width:100%;display:flex;align-items:center;justify-content:center;">
   <div style="text-align:center;padding:2rem;">
     <div style="font-size:4rem;margin-bottom:1rem;">🍽️</div>
@@ -904,7 +914,7 @@ const AGENDA=[
   {time:"10:00 – 10:30",icon:"🎉", title:"Rompehielos", who:"Fernanda Alva", game:"game-relevo"},
   {time:"10:30 – 11:30",icon:"🧠", title:"Juego de conceptos", who:"Alejo Aguilar · Fernanda Alva", game:"game-terminos"},
   {time:"11:30 – 12:30",icon:"🚀", title:"Charlemos sobre producto", who:"David Sánchez", video:"vIdD0u900Tk", photo:true, vtitle:"🚀 Charla sobre producto", vsub:"Una mirada al producto de Alegra y hacia dónde vamos. 🚀", cta:"Ver ▶"},
-  {time:"12:30 – 13:30",icon:"🇲🇽", title:"Espacio sobre el mercado mexicano", who:"Jakub Roubal · Ángelo Dalí Anaya", game:"coming-soon"},
+  {time:"12:30 – 13:30",icon:"🇲🇽", title:"Espacio sobre el mercado mexicano", who:"Jakub Roubal · Ángelo Dalí Anaya", game:"mercado-intro"},
   {time:"13:30 – 15:00",icon:"🍽️", title:"Comida", tag:"Break", game:"comida"},
   {time:"15:00 – 15:30",icon:"💚", title:"Cultura y lectura", who:"Alejo Aguilar · Catalina Bustamante", game:"cultura", cta:"Abrir ▶"},
   {time:"15:30 – 16:30",icon:"🎙️", title:"Preguntas a directores", who:"Catalina Bustamante · Alejo Aguilar", game:"game-preguntas"},
@@ -1011,7 +1021,7 @@ window.openPeroAntes = function(){
     show('pero-antes');
   }
 };
-const screens=['home','game-relevo','game-preguntas','game-terminos','video','cultura','coming-soon','pymes','pero-antes','comida'];
+const screens=['home','meditacion','game-relevo','game-preguntas','game-terminos','video','cultura','coming-soon','pymes','pero-antes','comida'];
 function key(e,id){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(id);}}
 function show(id){
   const vf=document.getElementById('videoFrame');
@@ -1322,6 +1332,7 @@ renderAgenda();
 (function(){
   var SCREENS=[
     {id:'home',          label:'Inicio – Agenda'},
+    {id:'meditacion',     label:'Meditación'},
     {id:'game-relevo',   label:'Rompehielos'},
     {id:'game-terminos', label:'Juego de Conceptos'},
     {id:'video',         label:'Charlemos sobre producto'},
