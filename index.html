@@ -548,9 +548,9 @@ body.present-mode #present-overlay { display: flex; }
 }
 #pres-slide-content .screen { display:block !important; }
         #pres-slide-content #coming-soon,
-        #pres-slide-content #pymes { height:100% !important; }
+        #pres-slide-content #pymes { height:100% !important; position:relative !important; }
         #pres-slide-content #coming-soon > div:first-child,
-        #pres-slide-content #pymes > div:first-child { height:100% !important; }
+        #pres-slide-content #pymes > div:first-child { position:absolute !important; top:0 !important; left:0 !important; right:0 !important; bottom:0 !important; display:flex !important; align-items:center !important; justify-content:center !important; }
         #pres-slide-content #coming-soon h2,
         #pres-slide-content #pymes h2 { color:#ffffff !important; font-size:1.9rem !important; text-align:left !important; }
 #pres-slide-content .screen h2 { font-size: clamp(22px,3vw,34px) !important; }
