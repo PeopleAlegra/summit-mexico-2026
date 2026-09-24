@@ -548,7 +548,9 @@ body.present-mode #present-overlay { display: flex; }
 }
 #pres-slide-content .screen { display:block !important; }
         #pres-slide-content #coming-soon,
-        #pres-slide-content #pymes { display:flex !important; height:100%; align-items:center; justify-content:center; }
+        #pres-slide-content #pymes { height:100% !important; }
+        #pres-slide-content #coming-soon > div:first-child,
+        #pres-slide-content #pymes > div:first-child { height:100% !important; }
         #pres-slide-content #coming-soon h2,
         #pres-slide-content #pymes h2 { color:#ffffff !important; font-size:1.9rem !important; text-align:left !important; }
 #pres-slide-content .screen h2 { font-size: clamp(22px,3vw,34px) !important; }
@@ -733,7 +735,8 @@ body.present-mode #present-overlay { display: flex; }
         <button onclick="openVideoByIndex(8)" style="background:transparent;border:1.5px solid #E5E5EA;color:#6E6E73;padding:0.5rem 1.5rem;border-radius:100px;font-size:0.9rem;cursor:pointer">← Volver</button>
       </div>
     </section>
-<section id="coming-soon" class="screen hidden" style="background:#0B1929;flex:1;min-height:0;display:flex;align-items:center;justify-content:center">
+<section id="coming-soon" class="screen hidden" style="background:#0B1929;flex:1;min-height:0">
+  <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:relative;width:100%;max-width:900px;padding:1.5rem">
     <div style="position:absolute;top:-80px;right:-80px;width:220px;height:220px;border-radius:50%;border:40px solid rgba(29,220,192,0.15);pointer-events:none"></div>
     <h2 style="color:#fff;font-size:2rem;font-weight:700;margin:0 0 0.25rem 0">Alegra en cifras</h2>
@@ -750,8 +753,10 @@ body.present-mode #present-overlay { display: flex; }
     </div>
     <p style="font-size:0.65rem;color:rgba(255,255,255,0.35);margin:0">Fuente: datos internos de Alegra</p>
   </div>
+  </div>
 </section>
-<section id="pymes" class="screen hidden" style="background:#0B1929;flex:1;min-height:0;display:flex;align-items:center;justify-content:center">
+<section id="pymes" class="screen hidden" style="background:#0B1929;flex:1;min-height:0">
+  <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:relative;width:100%;max-width:900px;padding:1.5rem">
     <div style="position:absolute;top:-80px;right:-80px;width:220px;height:220px;border-radius:50%;border:40px solid rgba(29,220,192,0.15);pointer-events:none"></div>
     <h2 style="color:#fff;font-size:2rem;font-weight:700;margin:0 0 0.25rem 0">El salto de las pymes</h2>
@@ -779,6 +784,7 @@ body.present-mode #present-overlay { display: flex; }
       <span style="font-size:0.82rem;color:#0B1929;line-height:1.4">a la semana ahorran en promedio los usuarios de Alegra en México cuando dan el salto. La mitad venía de Excel.</span>
     </div>
     <p style="font-size:0.65rem;color:rgba(255,255,255,0.35);margin:0">Fuentes: INEGI, Censos Económicos 2024 · Estudio Pulso Pymes LATAM 2026 · Encuesta de percepción de valor Alegra 2026</p>
+  </div>
   </div>
 </section>
 
