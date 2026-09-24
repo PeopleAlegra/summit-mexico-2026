@@ -552,6 +552,7 @@ body.present-mode #present-overlay { display: flex; }
         #pres-slide-content #mercado-intro { height:100% !important; width:100% !important; display:flex !important; align-items:center !important; justify-content:center !important; }
         #pres-slide-content #comida { height:100% !important; width:100% !important; display:flex !important; align-items:center !important; justify-content:center !important; }
         #pres-slide-content #meditacion { height:100% !important; width:100% !important; display:flex !important; align-items:center !important; justify-content:center !important; }
+        #pres-slide-content #video { height:100% !important; width:100% !important; display:flex !important; flex-direction:column !important; align-items:center !important; justify-content:center !important; padding:1rem !important; box-sizing:border-box !important; }
         #pres-slide-content #coming-soon > div:first-child,
         #pres-slide-content #pymes > div:first-child { position:absolute !important; top:0 !important; left:0 !important; right:0 !important; bottom:0 !important; display:flex !important; align-items:center !important; justify-content:center !important; }
         #pres-slide-content #coming-soon h2,
@@ -724,8 +725,8 @@ body.present-mode #present-overlay { display: flex; }
   <section id="video" class="screen hidden">
       <h2 id="videoTitle" style="text-align:center">Hablemos de producto<br>con <span style="color:#1A7E7F;font-weight:inherit">David Sánchez</span></h2>
       <p class="sub" id="videoSub" style="display:none"></p>
-      <div id="video-photo-wrap" style="display:flex;flex-direction:column;align-items:center;gap:1rem;width:100%;box-sizing:border-box;padding:1.5rem 1rem 2.5rem">
-        <img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David Sánchez" style="max-width:400px;height:auto;border-radius:16px;box-shadow:0 6px 28px rgba(0,0,0,0.18)">
+      <div id="video-photo-wrap" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;width:100%;box-sizing:border-box;padding:1.5rem 1rem 2rem">
+        <img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David Sánchez" style="width:auto;max-width:320px;max-height:42vh;object-fit:contain;border-radius:16px;box-shadow:0 6px 28px rgba(0,0,0,0.18)">
         <div style="background:#F0FAFA;border:1.5px solid rgba(26,126,127,0.3);color:#001E3B;font-weight:600;font-size:0.95rem;padding:0.45rem 1.4rem;border-radius:100px">David Sánchez · Head of Product</div>
         <button onclick="event.stopPropagation();event.stopImmediatePropagation();openPeroAntes()" style="margin-top:0.5rem;background:#1A7E7F;color:#fff;border:none;padding:0.65rem 2rem;border-radius:100px;font-size:1rem;font-weight:600;cursor:pointer">Continuar →</button>
       </div>
@@ -994,7 +995,7 @@ function openVideoByIndex(i){const it=AGENDA[i];document.getElementById('videoTi
       window._pendingVideo='';
       if(pw){
         pw.style.cssText='display:flex;flex-direction:column;align-items:center;gap:1rem;width:100%;box-sizing:border-box;padding:1.5rem 1rem 2.5rem';
-        pw.innerHTML='<img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David S\u00e1nchez" style="max-width:400px;height:auto;border-radius:16px;box-shadow:0 6px 28px rgba(0,0,0,0.18)"><div style="background:#F0FAFA;border:1.5px solid rgba(26,126,127,0.3);color:#001E3B;font-weight:600;font-size:0.95rem;padding:0.45rem 1.4rem;border-radius:100px">David S\u00e1nchez \u00b7 Head of Product<\/div><button onclick="event.stopPropagation();event.stopImmediatePropagation();openPeroAntes()" style="margin-top:0.5rem;background:#1A7E7F;color:#fff;border:none;padding:0.65rem 2rem;border-radius:100px;font-size:1rem;font-weight:600;cursor:pointer">Continuar \u2192<\/button>';
+        pw.innerHTML='<img src="https://raw.githubusercontent.com/PeopleAlegra/summit-mexico-2026/main/david.jpg" alt="David S\u00e1nchez" style="width:auto;max-width:320px;max-height:42vh;object-fit:contain;border-radius:16px;box-shadow:0 6px 28px rgba(0,0,0,0.18)"><div style="background:#F0FAFA;border:1.5px solid rgba(26,126,127,0.3);color:#001E3B;font-weight:600;font-size:0.95rem;padding:0.45rem 1.4rem;border-radius:100px">David S\u00e1nchez \u00b7 Head of Product<\/div><button onclick="event.stopPropagation();event.stopImmediatePropagation();openPeroAntes()" style="margin-top:0.5rem;background:#1A7E7F;color:#fff;border:none;padding:0.65rem 2rem;border-radius:100px;font-size:1rem;font-weight:600;cursor:pointer">Continuar \u2192<\/button>';
       }
       if(iw)iw.style.display='none';
       const _vsEl=document.getElementById('videoSub');
