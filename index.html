@@ -1021,7 +1021,7 @@ window.openPeroAntes = function(){
     show('pero-antes');
   }
 };
-const screens=['home','meditacion','game-relevo','game-preguntas','game-terminos','video','cultura','coming-soon','pymes','pero-antes','comida'];
+const screens=['home','meditacion','game-relevo','game-preguntas','game-terminos','video','cultura','coming-soon','pymes','mercado-intro','pero-antes','comida'];
 function key(e,id){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(id);}}
 function show(id){
   const vf=document.getElementById('videoFrame');
@@ -1089,7 +1089,7 @@ const preguntas={
     if(!SB_READY){this.render();return;}
     try{
       const {data,error}=await SB.from('preguntas').select('texto,autor,destinatario').eq('aprobada',true);
-      if(!error && Array.isArray(data)){
+      if(!error && Array.isArray(data) && data.length>0){
         PREGUNTAS.length=0;
         data.forEach(r=>PREGUNTAS.push({q:r.texto,by:(r.autor||'Anónimo'),target:(r.destinatario||'Abierta'),include:true}));
         this.used.clear();
